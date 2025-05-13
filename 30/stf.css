@@ -1,0 +1,348 @@
+
+/* 设置页面主体的字体、外边距、内边距和行高 */
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        /* 设置页面头部的背景颜色、文字颜色、内边距、文本对齐方式和阴影 */
+        header {
+            background-color: #8C1515;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        /* 设置页面头部 h1 标签的字体大小和外边距 */
+        /* 原header样式保持不变 */
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        /* 新增带背景图的h1标题样式 */
+        .aaa {
+            background-image: url('images/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* 设置页面头部 p 标签的字体大小和上外边距 */
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        /* 设置导航栏的背景颜色和内边距 */
+        nav {
+            background-color: #B1040E;
+            padding: 15px 0;
+        }
+        /* 设置导航栏无序列表的样式，去除列表样式、设置外边距、内边距、最大宽度、溢出处理和弹性布局 */
+        nav ul {
+            list-style-type: none;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1200px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        /* 设置导航栏列表项的左右外边距 */
+        nav ul li {
+            margin: 0 15px;
+        }
+        /* 设置导航栏列表项链接的样式，包括显示方式、文字颜色、文本对齐方式、内边距、去除下划线、字体粗细、过渡效果和圆角 */
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+        /* 设置导航栏列表项链接悬停时的背景颜色 */
+        nav ul li a:hover {
+            background-color: #8C1515;
+        }
+        /* 设置英雄区域的背景渐变、背景图片、高度、弹性布局和文字颜色 */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('stanford-campus.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        /* 设置英雄区域内容的最大宽度和内边距 */
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        /* 设置英雄区域 h2 标签的字体大小、下外边距和文字阴影 */
+        .hero-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        /* 设置英雄区域 p 标签的字体大小、行高、下外边距和文字阴影 */
+        .hero-content p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        /* 设置号召性按钮的样式，包括显示方式、背景颜色、文字颜色、内边距、圆角、去除下划线、字体粗细和过渡效果 */
+        .cta-button {
+            display: inline-block;
+            background-color: #8C1515;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        /* 设置号召性按钮悬停时的背景颜色和位移效果 */
+        .cta-button:hover {
+            background-color: #B1040E;
+            transform: translateY(-2px);
+        }
+        /* 设置页脚的背景颜色、文字颜色、文本对齐方式、内边距和上外边距 */
+        footer {
+            background-color: #2E2D29;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+        
+        /* 新增顶部导航栏样式 */
+        /* 设置顶部导航栏的背景颜色、文字颜色、内边距和弹性布局 */
+        .top-nav {
+            background-color: #8C1515;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* 设置顶部导航栏链接的文字颜色、去除下划线、左右外边距和字体大小 */
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        /* 新增主导航菜单样式 */
+        /* 设置主导航菜单的背景颜色、底部边框和内边距、弹性布局 */
+        .main-nav {
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 设置主导航菜单链接的文字颜色、去除下划线、左右外边距、字体粗细和字体大小 */
+        .main-nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        /* 新增搜索框样式 */
+        /* 设置搜索框的边框、内边距和圆角 */
+        .search-box {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        /* 响应式设计 */
+        /* 当屏幕宽度小于等于 768px 时，调整顶部导航栏和主导航菜单的布局 */
+        @media (max-width: 768px) {
+            .top-nav, .main-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .top-nav a, .main-nav a {
+                margin: 5px 0;
+            }
+        }
+        /* 新增样式，让 Stanford University 和 Information for: 相隔 3cm */
+        .top-nav > div:first-child a {
+            margin-right: 3cm;
+        }
+
+        /* 正确应为（已存在上方定义，建议删除下方重复部分） */
+        .aaa {
+            background-image: url('images/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* 设置页面头部 p 标签的字体大小和上外边距 */
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        /* 设置导航栏的背景颜色和内边距 */
+        nav {
+            background-color: #B1040E;
+            padding: 15px 0;
+        }
+        /* 设置导航栏无序列表的样式，去除列表样式、设置外边距、内边距、最大宽度、溢出处理和弹性布局 */
+        nav ul {
+            list-style-type: none;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1200px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        /* 设置导航栏列表项的左右外边距 */
+        nav ul li {
+            margin: 0 15px;
+        }
+        /* 设置导航栏列表项链接的样式，包括显示方式、文字颜色、文本对齐方式、内边距、去除下划线、字体粗细、过渡效果和圆角 */
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+        /* 设置导航栏列表项链接悬停时的背景颜色 */
+        nav ul li a:hover {
+            background-color: #8C1515;
+        }
+        /* 设置英雄区域的背景渐变、背景图片、高度、弹性布局和文字颜色 */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('stanford-campus.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        /* 设置英雄区域内容的最大宽度和内边距 */
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        /* 设置英雄区域 h2 标签的字体大小、下外边距和文字阴影 */
+        .hero-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        /* 设置英雄区域 p 标签的字体大小、行高、下外边距和文字阴影 */
+        .hero-content p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        /* 设置号召性按钮的样式，包括显示方式、背景颜色、文字颜色、内边距、圆角、去除下划线、字体粗细和过渡效果 */
+        .cta-button {
+            display: inline-block;
+            background-color: #8C1515;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        /* 设置号召性按钮悬停时的背景颜色和位移效果 */
+        .cta-button:hover {
+            background-color: #B1040E;
+            transform: translateY(-2px);
+        }
+        /* 设置页脚的背景颜色、文字颜色、文本对齐方式、内边距和上外边距 */
+        footer {
+            background-color: #2E2D29;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+        
+        /* 新增顶部导航栏样式 */
+        /* 设置顶部导航栏的背景颜色、文字颜色、内边距和弹性布局 */
+        .top-nav {
+            background-color: #8C1515;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* 设置顶部导航栏链接的文字颜色、去除下划线、左右外边距和字体大小 */
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        /* 新增主导航菜单样式 */
+        /* 设置主导航菜单的背景颜色、底部边框和内边距、弹性布局 */
+        .main-nav {
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 设置主导航菜单链接的文字颜色、去除下划线、左右外边距、字体粗细和字体大小 */
+        .main-nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        /* 新增搜索框样式 */
+        /* 设置搜索框的边框、内边距和圆角 */
+        .search-box {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        /* 响应式设计 */
+        /* 当屏幕宽度小于等于 768px 时，调整顶部导航栏和主导航菜单的布局 */
+        @media (max-width: 768px) {
+            .top-nav, .main-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .top-nav a, .main-nav a {
+                margin: 5px 0;
+            }
+        }
+        /* 新增样式，让 Stanford University 和 Information for: 相隔 3cm */
+        .top-nav > div:first-child a {
+            margin-right: 3cm;
+        }
