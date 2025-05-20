@@ -1,141 +1,145 @@
-body {
-  background-color: #b5a789;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: small;
-  margin: 0;
+body { 
+  background-color: #b5a789; /* 背景色 */
+  font-family:      Georgia, "Times New Roman", Times, serif; /* 字体 */
+  font-size:        small; /* 字体大小 */
+  margin:           0px; /* 外边距 */
 }
 
-header.top {
-  background-color: #675c47;
-  margin: 10px;
-  height: 108px;
+.header {
+  background-color: #675c47; /* 背景色 */
+  margin:           10px; /* 外边距 */
+  height:           108px; /* 高度 */
 }
 
-
-section.main, section.blog{
+/* added section#blog for blog */
+section.main, section.blog {
   display: table-cell;
-  background: #efe5d0 url(images/background.gif) top left;
-  font-size: 105%;
-  padding: 15px;
-  width: 70%;
+  background:       #efe5d0 url(images/background.gif) top left;
+  font-size:        105%;
+  padding:          15px;
   vertical-align: top;
 }
 
-aside{
-  display: table-cell;
-  background: #efe5d0 url(images/background.gif) bottom right;
-  font-size: 105%;
-  padding: 15px;
-  width: 30%; 
+.sidebar {
+  background:       #efe5d0 url(images/background.gif) bottom right; /* 背景色 */
+  font-size:        105%; /* 字体大小 */
+  padding:          15px;   /* 内边距 */
+  /*margin:           0px 10px 10px 10px; */  /* 外边距 */
+  display: table-cell; /* 显示方式 */
+  vertical-align: top; /* 垂直对齐方式:顶端对齐 */
+  border-spacing: 10px;  /* 为表格中地单元格设置 10px 的边框间距（相当于外边距）*/;
 }
 
 .footer {
-  background-color: #675c47;
-  color: #efe5d0;
-  text-align: center;
-  padding: 15px;
-  margin: 10px;
-  font-size: 90%;
+  background-color: #675c47; /* 背景色 */
+  color:            #efe5d0; /* 字体颜色 */
+  text-align:       center; /* 文本对齐方式 */
+  padding:          15px;  /* 内边距 */
+  margin:           10px;  /* 外边距 */
+  font-size:        90%;   /* 字体大小 */
+  clear: both; /* 清除浮动，避免影响页脚布局 */
 }
 
 h1 {
-  font-size: 120%;
-  color: #954b4b;
+  font-size:        120%; /* 字体大小 */
+  color:            #954b4b; /* 字体颜色 */
 }
 
 .slogan {
-  color: #954b4b;
-}
+   color: #954b4b;  /* 字体颜色 */
+  } 
 
 .beanheading {
-  text-align: center;
-  line-height: 1.8em;
+  text-align:       center;  /* 文本对齐方式 */
+  line-height:      1.8em;  /* 行高 */
 }
 
 a:link {
-  color: #b76666;
-  text-decoration: none;
-  border-bottom: thin dotted #b76666;
+  color:            #b76666; /* 链接颜色 */
+  text-decoration:  none; /* 文本装饰 */
+  border-bottom:    thin dotted #b76666; /* 边框 */
+}
+a:visited {
+  color:            #675c47; /* 链接颜色 */
+  text-decoration:  none; /* 文本装饰 */
+  border-bottom:    thin dotted #675c47;  /* 边框 */
 }
 
-a:visited {
-  color: #675c47;
-  text-decoration: none;
-  border-bottom: thin dotted #675c47;
+.allcontent {
+	width:               800px; /* 宽度 */
+	padding-top:           5px; /* 内边距 */
+	padding-bottom:        5px; /* 内边距 */ 
+	background-color:  #675c47; /* 背景色 */ 
+  margin-left: auto;  /* 外边距 */
+  margin-right: auto;  /* 外边距 */
 }
 
 div.tableContainer {
   display: table;
-  border-spacing: 10px;
+  border-spacing: 10px;  /* 为表格中地单元格设置 10px 的边框间距（相当于外边距）*/
 }
 
-div.tableRow {
+div.talbeRow {
   display: table-row;
 }
 
 .drinks {
-  display: table-cell;
-  vertical-align: top;
-  background: #efe5d0;
-  padding: 15px;
-  width: 20%; 
-}
+  display: table-cell; /* 显示方式 */
+  background-color: #efe5d0; /* 背景色 */
+  padding: 15px; /* 内边距 */
+} 
 
-aside{
-  display: table-cell;
-  vertical-align: top;
-  background: #efe5d0 url(images/background.gif) bottom right;
-  font-size: 105%;
-  padding: 15px;
-  width: 30%; 
-}
-.header-left {
-  background-image: url(images/header.gif);
-  width: 300px;
-  height: 108px;
-}
-
-.header-right  {
-  background-image: url(images/header.gif);
-  width: 300px;
-  height: 108px;
-  background-position-x: -500px;
-  z-index: 10;
-  float: right;
-}
 .award {
-	position: fixed;
+	position: absolute;
 	top: 30px;
 	left: 45%;
 }
-.coupon{
+
+.coupon {
 	position: fixed;
 	top: 350px;
-	left: -210px;
-  transition: left 0.5s ease;
-}
-aside:hover {
-	left: 0px; 
-}
-ul li {
-	display: inline;
-	padding: 5px 10px 5px 10px;
-}
-ul li a:link, nav ul li a:visited {
-	color: #954b4b;
-	border-bottom: none;
-	font-weight: bold;
-/*
-	text-shadow: 1px 1px 3px #e2c2c2; 
-	text-transform: uppercase;
-*/
+	left: 0px;
 }
 
-ul li.selected {
-	background-color: #c8b99c;
+.coupon a, img{
+	border: none;
 }
-nav ul {
-	margin: 0px;
-	list-style-type: none;
-	padding: 5px 0px 5px 0px;
+
+.coupon {
+	position: fixed;
+	top: 350px;
+	left: -90px;
+}
+
+.coupon { 
+	position: fixed; 
+	top: 350px; 
+	left: -210px; /* 初始位置在左侧 */ 
+	transition: left 0.5s ease; /* 添加过渡效果 */
+}
+
+.coupon:hover {
+	left: 0px; /* 悬停时移动到 0px 的位置 */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.award{
+  animation: rotate 1s linear infinite;
+}
+
+
+section.blog article time {
+  display: block;
+  color: #675c47; /* 日期颜色 */
+  font-size: 90%; /* 日期字体大小 */
+  margin-bottom: 10px; /* 日期下方的外边距 */
+  font-style: italic; /* 日期字体样式设为斜体 */
 }

@@ -1,0 +1,230 @@
+/* 基础样式重置
+   以下代码会对所有元素生效，将所有元素的外边距、内边距重置为 0，
+   并将盒模型设置为 border-box，让元素的宽度和高度包含内边距和边框，
+   同时设置默认字体为 Arial 或无衬线字体。
+*/
+* {
+  margin: 0; /* 重置所有元素的外边距为 0 */
+  padding: 0; /* 重置所有元素的内边距为 0 */
+  box-sizing: border-box; /* 设置盒模型为 border-box */
+  font-family: Arial, sans-serif; /* 设置默认字体 */
+}
+
+/* 容器类样式
+   该类用于创建一个宽度受限的容器，使其在页面中居中显示，
+   并在两侧添加内边距，避免内容紧贴页面边缘。
+*/
+.container {
+  max-width: 1200px; /* 设置容器的最大宽度为 1200px */
+  margin: 0 auto; /* 使容器在水平方向上居中 */
+  padding: 0 20px; /* 在容器的左右两侧添加 20px 的内边距 */
+}
+
+/* 顶部信息导航栏样式
+   定义顶部信息导航栏的背景颜色、内边距和底部边框样式。
+*/
+.info-nav {
+  background-color: #f4f4f4;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.info-nav .container {
+  display: flex;
+  align-items: center; /* 垂直居中对齐元素 */
+  justify-content: flex-end; /* 让元素右对齐 */
+}
+
+.info-nav .info-group {
+  display: flex;
+  align-items: center;
+}
+
+.info-nav .nav-links {
+  display: flex;
+  gap: 20px; /* 设置导航链接之间的间距 */
+}
+
+.info-nav .search {
+  margin-left: 20px; /* 给搜索框添加左边距，控制和左侧元素的间距 */
+}
+
+/* 顶部信息导航栏链接样式
+   去除链接的下划线，设置链接的颜色和字体大小。
+*/
+.info-nav a {
+  text-decoration: none; /* 去除链接的下划线 */
+  color: #555; /* 设置链接的颜色为深灰色 */
+  font-size: 0.9em; /* 设置链接的字体大小为父元素字体大小的 0.9 倍 */
+}
+
+/* 搜索框样式
+   将搜索框靠右对齐。
+*/
+.search {
+  margin-left: auto; /* 将搜索框推到右侧 */
+}
+
+/* 主导航菜单样式
+   定义主导航菜单的内边距、背景颜色和阴影效果。
+*/
+.main-nav {
+  padding: 15px 0; /* 在主导航菜单的上下添加 15px 的内边距 */
+  background-color: #fff; /* 设置主导航菜单的背景颜色为白色 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 在主导航菜单底部添加阴影效果 */
+}
+
+/* 主导航菜单内容器样式
+   使用 Flexbox 布局让主导航菜单内的元素垂直居中对齐。
+*/
+.main-nav .container {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+  .logo-nav-container {
+      display: flex;
+      align-items: center; /* 垂直居中对齐 */
+      flex-wrap: nowrap; /* 防止元素换行 */
+  }
+  
+  /* 可以根据需要调整 logo 的样式 */
+  .logo {
+      white-space: nowrap; /* 防止 logo 文字换行 */
+      margin-right: 20px; /* 给 logo 右侧添加一些间距 */
+  }
+}
+
+/*  logo 样式
+   设置 logo 的颜色和字体大小，并在右侧添加间距。
+*/
+.logo {
+  display: inline-block; /* 将 logo 设置为行内块级元素 */
+  color: #8C1515; 
+  font-size: 1.8em; 
+  margin-right: 40px; 
+  white-space: nowrap; /* 防止 logo 文字换行 */
+  transition: none;
+}
+
+/* 主导航菜单链接容器样式
+   使用 Flexbox 布局让主导航菜单链接横向排列，设置链接之间的间距，
+   并允许链接在空间不足时换行。
+*/
+.menu {
+  display: flex; /* 使用 Flexbox 布局 */
+  gap: 25px; /* 设置主导航菜单链接之间的间距为 25px */
+  flex-wrap: wrap; /* 允许链接在空间不足时换行 */
+}
+
+/* 主导航菜单链接样式
+   去除链接的下划线，设置链接的颜色和字体粗细。
+*/
+.menu a {
+  text-decoration: none; /* 去除链接的下划线 */
+  color: #333; /* 设置链接的颜色为深灰色 */
+  font-weight: 500; /* 设置链接的字体粗细为 500 */
+}
+
+/* 主标题区域样式
+   定义主标题区域的背景颜色、内边距和文本对齐方式。
+*/
+.hero {
+  background-color: #f9f9f9; /* 设置主标题区域的背景颜色为浅灰色 */
+  padding: 80px 0; /* 在主标题区域的上下添加 80px 的内边距 */
+  text-align: center; /* 将主标题区域内的文本居中对齐 */
+}
+
+/* 主标题样式
+   设置主标题的字体大小、颜色和底部外边距。
+*/
+.hero h1 {
+  font-size: 3.5em; /* 设置主标题的字体大小为父元素字体大小的 3.5 倍 */
+  color: #2E2E2E; /* 设置主标题的颜色为深灰色 */
+  margin-bottom: 30px; /* 在主标题底部添加 30px 的外边距 */
+}
+
+/* 探索框样式
+   将探索框设置为行内块元素，设置内边距、边框样式、颜色和鼠标指针样式，
+   并添加过渡效果。
+*/
+.explore-box {
+  display: inline-block; /* 将探索框设置为行内块元素 */
+  padding: 15px 30px; /* 在探索框的上下添加 15px、左右添加 30px 的内边距 */
+  border: 2px solid #8C1515; /* 设置探索框的边框为 2px 宽的暗红色实线 */
+  color: #8C1515; /* 设置探索框内文本的颜色为暗红色 */
+  margin-top: 20px; /* 在探索框顶部添加 20px 的外边距 */
+  cursor: pointer; /* 将鼠标指针样式设置为手型 */
+  transition: all 0.3s; /* 添加过渡效果，让样式变化在 0.3 秒内完成 */
+}
+
+/* 探索框悬停样式
+   当鼠标悬停在探索框上时，改变探索框的背景颜色和文本颜色。
+*/
+.explore-box:hover {
+  background-color: #8C1515; /* 设置悬停时探索框的背景颜色为暗红色 */
+  color: white; /* 设置悬停时探索框内文本的颜色为白色 */
+}
+
+/* 响应式设计 - 屏幕小于768px时
+   当屏幕宽度小于 768px 时，调整部分元素的样式以适应小屏幕。
+*/
+@media (max-width: 768px) {
+  /* 调整主导航菜单链接之间的间距 */
+  .menu {
+    gap: 15px; /* 设置主导航菜单链接之间的间距为 15px */
+  }
+  
+  /* 调整 logo 的字体大小和右侧外边距 */
+  .logo {
+    font-size: 1.5em; /* 设置 logo 的字体大小为父元素字体大小的 1.5 倍 */
+    margin-right: 20px; /* 在 logo 右侧添加 20px 的外边距 */
+  }
+  
+  /* 调整主标题的字体大小 */
+  .hero h1 {
+    font-size: 2.5em; /* 设置主标题的字体大小为父元素字体大小的 2.5 倍 */
+  }
+}
+
+/* 信息组样式
+   使用 Flexbox 布局让信息组内的元素垂直居中对齐。
+*/
+.info-group {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+}
+
+/* 信息组内段落样式
+   在信息组内的段落右侧添加间距。
+*/
+.info-group p {
+  margin-right: 10px; /* 在信息组内的段落右侧添加 10px 的外边距 */
+}
+
+/* 页面容器样式 */
+.page-container {
+    position: relative; /* 相对定位，作为子元素绝对定位的参考 */
+    min-height: 100vh; /* 确保容器至少占满视口高度 */
+}
+
+/* 背景图片样式 */
+.background-image {
+    position: absolute; /* 绝对定位，让图片覆盖整个容器 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持图片比例并覆盖容器 */
+    z-index: -1; /* 让图片在内容下方 */
+}
+
+/* 给页面内容添加透明背景 */
+.info-nav, .main-nav, .hero {
+    background-color: rgba(255, 255, 255, 0.8); /* 白色半透明背景 */
+}
+
+/* 信息组内段落样式
+   在信息组内的段落右侧添加间距。
+*/
+.info-group p {
+  margin-right: 10px; /* 在信息组内的段落右侧添加 10px 的外边距 */
+}

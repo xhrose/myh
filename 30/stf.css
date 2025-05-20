@@ -26,13 +26,40 @@
             background-image: url('images/header-bg.jpg');
             background-size: cover;
             background-position: center;
-            padding: 40px 20px;
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            /* 新增定位属性 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            /* 调整内边距 */
+            padding: 20px;
+        }
+
+        header {
+            /* 新增相对定位和高度限制 */
+            position: relative;
+            padding: 0;
+            height: 775px; /* 匹配图片高度 */
+            overflow: hidden;
+        }
+
+        header img {
+            width: 100%;    /* 撑满整个容器宽度 */
+            height: 775px;
+            margin: 0;      /* 移除左右外边距 */
+            object-fit: cover;
+            object-position: center top;  /* 可调整图片显示重心 */
+        }
+
+        header {
+            position: relative;
+            padding: 0;
+            height: 775px;
+            overflow: hidden;
+            width: 100%;    /* 确保容器宽度撑满屏幕 */
         }
         /* 设置页面头部 p 标签的字体大小和上外边距 */
         header p {
@@ -114,69 +141,136 @@
             transition: all 0.3s;
         }
         /* 设置号召性按钮悬停时的背景颜色和位移效果 */
-        .cta-button:hover {
+        .cta-button:hover { 
             background-color: #B1040E;
             transform: translateY(-2px);
         }
         /* 设置页脚的背景颜色、文字颜色、文本对齐方式、内边距和上外边距 */
-        footer {
-            background-color: #2E2D29;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-        }
         
         /* 新增顶部导航栏样式 */
         /* 设置顶部导航栏的背景颜色、文字颜色、内边距和弹性布局 */
         .top-nav {
-            background-color: #8C1515;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background-color: #8C1515;  /* 背景颜色 */
+            color: white;    /* 文字颜色 */
+            padding: 10px 20px;  /* 内边距 */
+            display: flex;   /* 弹性布局 */
+            justify-content: space-between;  /* 两端对齐 */
+            align-items: center;    /* 垂直居中 */
         }
         /* 设置顶部导航栏链接的文字颜色、去除下划线、左右外边距和字体大小 */
+        /* 顶部导航链接 */
         .top-nav a {
             color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 14px;
+            text-decoration: none; /* 去除下划线 */
+            margin: 0 10px; /* 增加左右间距 */
+            font-size: 14px;    /* 调整字体大小 */
+            position: relative; /* 新增相对定位 */
+            padding-top: 4px; /* 增加顶部间距 */
+        }
+
+        .top-nav a:hover::before {
+            content: '';    /* 新增伪元素 */
+            position: absolute;     /* 绝对定位 */
+            top: -3px;  /* 顶部偏移 */
+            left: 0;    /* 左偏移 */
+            width: 100%;    /* 宽度 */
+            height: 2px;    /* 高度 */
+            background: white;    /* 背景颜色 */
+            animation: underline 0.3s ease-out;    /* 动画效果 */
+        }
+
+        @keyframes underline {  
+            from { width: 0 }  /* 初始宽度为0 */
+            to { width: 100% }  /* 最终宽度为100% */
+        }
+        transition{
+            transition: all 0.3s; /* 添加过渡效果 */
+        }
+       
+      
+        /* 主导航链接 */
+        .main-nav a {
+            color: #333;    /* 文字颜色 */
+            text-decoration: none;  /* 去除下划线 */
+            margin: 0 15px;  /* 增加左右间距 */
+            font-weight: bold;      /* 加粗字体 */
+            font-size: 16px;    /* 调整字体大小 */
+            position: relative;  /* 新增相对定位 */
+            padding-top: 4px;  /* 增加顶部间距 */
+            transition: all 0.3s;   /* 过渡效果 */
+        }
+
+        .main-nav a:hover::before { /* 新增伪元素 */
+            content: '';    /* 新增伪元素 */
+            position: absolute;     /* 绝对定位 */
+            top: -3px;  /* 顶部偏移 */
+            left: 0;    /* 左偏移 */
+            width: 100%;    /* 宽度 */
+            height: 2px;    /* 高度 */
+            background: #333;    /* 背景颜色 */
+            animation: underline 0.3s ease-out;    /* 动画效果 */
+        }
+
+        /* 与顶部导航共用动画效果 */
+        @keyframes underline {
+            from { width: 0 }    /* 初始宽度为0 */
+            to { width: 100% }   /* 最终宽度为100% */
+        }
+        transition{
+        transition: all 0.3s; /* 添加过渡效果，修正语法错误，添加冒号并明确使用 transition 属性 */
+        }
+        .top-nav a:hover {
+            text-decoration: underline; /* 新增下划线效果 */
+        }
+
+        /* 侧边导航链接 */
+        nav ul li a {
+            display: block; /* 确保链接块级显示 */
+            color: white;    /* 文字颜色 */
+            text-align: center; /* 居中对齐 */
+            padding: 10px 20px; /* 内边距 */
+            text-decoration: none; /* 新增下划线效果 */
+            font-weight: 600;    /* 字体粗细 */
+            transition: all 0.3s;   /* 过渡效果 */
+            border-radius: 4px;    /* 圆角 */
+        }
+        nav ul li a:hover {
+            background-color: #8C1515;
+            text-decoration: underline; /* 在原有悬停效果上添加下划线 */
         }
         /* 新增主导航菜单样式 */
         /* 设置主导航菜单的背景颜色、底部边框和内边距、弹性布局 */
         .main-nav {
-            background-color: white;
-            border-bottom: 1px solid #ddd;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
+            background-color: white;        /* 背景颜色 */
+            border-bottom: 1px solid #ddd;  /* 底部边框 */
+            padding: 15px 20px;             /* 内边距 */
+            display: flex;                  /* 弹性布局 */
+            justify-content: space-between; /* 两端对齐 */
         }
         /* 设置主导航菜单链接的文字颜色、去除下划线、左右外边距、字体粗细和字体大小 */
         .main-nav a {
             color: #333;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 16px;
+            text-decoration: none; /* 去除下划线 */
+            margin: 0 15px; /* 增加左右间距 */
+            font-weight: bold; /* 加粗字体 */
+            font-size: 16px;    /* 调整字体大小 */
         }
         /* 新增搜索框样式 */
         /* 设置搜索框的边框、内边距和圆角 */
         .search-box {
-            border: 1px solid #ddd;
-            padding: 5px;
-            border-radius: 4px;
+            border: 1px solid #ddd; /* 边框 */
+            padding: 5px;             /* 内边距 */
+            border-radius: 4px;       /* 圆角 */
         }
         /* 响应式设计 */
         /* 当屏幕宽度小于等于 768px 时，调整顶部导航栏和主导航菜单的布局 */
         @media (max-width: 768px) {
             .top-nav, .main-nav {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: column; /* 垂直堆叠 */
+                align-items: flex-start;    /* 左对齐 */
             }
             .top-nav a, .main-nav a {
-                margin: 5px 0;
+                margin: 5px 0;  /* 增加间距 */
             }
         }
         /* 新增样式，让 Stanford University 和 Information for: 相隔 3cm */
@@ -184,165 +278,165 @@
             margin-right: 3cm;
         }
 
-        /* 正确应为（已存在上方定义，建议删除下方重复部分） */
-        .aaa {
-            background-image: url('images/header-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 40px 20px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* 修改下滑按钮样式 */
+        .scroll-down {
+            /* 保持其他属性不变 */
+            flex-direction: row; /* 确保从左到右排列 */
         }
-        /* 设置页面头部 p 标签的字体大小和上外边距 */
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        /* 设置导航栏的背景颜色和内边距 */
-        nav {
-            background-color: #B1040E;
-            padding: 15px 0;
-        }
-        /* 设置导航栏无序列表的样式，去除列表样式、设置外边距、内边距、最大宽度、溢出处理和弹性布局 */
-        nav ul {
-            list-style-type: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 1200px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-        }
-        /* 设置导航栏列表项的左右外边距 */
-        nav ul li {
-            margin: 0 15px;
-        }
-        /* 设置导航栏列表项链接的样式，包括显示方式、文字颜色、文本对齐方式、内边距、去除下划线、字体粗细、过渡效果和圆角 */
-        nav ul li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            border-radius: 4px;
-        }
-        /* 设置导航栏列表项链接悬停时的背景颜色 */
-        nav ul li a:hover {
-            background-color: #8C1515;
-        }
-        /* 设置英雄区域的背景渐变、背景图片、高度、弹性布局和文字颜色 */
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('stanford-campus.jpg') no-repeat center center/cover;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        /* 设置英雄区域内容的最大宽度和内边距 */
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-        /* 设置英雄区域 h2 标签的字体大小、下外边距和文字阴影 */
-        .hero-content h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        /* 设置英雄区域 p 标签的字体大小、行高、下外边距和文字阴影 */
-        .hero-content p {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        /* 设置号召性按钮的样式，包括显示方式、背景颜色、文字颜色、内边距、圆角、去除下划线、字体粗细和过渡效果 */
-        .cta-button {
-            display: inline-block;
-            background-color: #8C1515;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        /* 设置号召性按钮悬停时的背景颜色和位移效果 */
-        .cta-button:hover {
-            background-color: #B1040E;
-            transform: translateY(-2px);
-        }
-        /* 设置页脚的背景颜色、文字颜色、文本对齐方式、内边距和上外边距 */
-        footer {
-            background-color: #2E2D29;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
+
+        /* 调整文字和箭头顺序 */
+        .scroll-down::after {
+            content: 'Explore Stanford';
+            order: 1; /* 文字在前 */
         }
         
-        /* 新增顶部导航栏样式 */
-        /* 设置顶部导航栏的背景颜色、文字颜色、内边距和弹性布局 */
-        .top-nav {
-            background-color: #8C1515;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .scroll-down::before {
+            /* 保持箭头样式不变 */
+            order: 2; /* 箭头在后 */
         }
-        /* 设置顶部导航栏链接的文字颜色、去除下划线、左右外边距和字体大小 */
-        .top-nav a {
+        /* 问题1：重复的.scroll-down定义 */
+                .scroll-down {
+                    position: absolute;
+                    bottom: 30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    flex-direction: row;
+                    cursor: pointer;
+                    z-index: 2;
+                    transition: all 0.3s;
+                }
+        
+                /* 问题2：冲突的悬停效果 */
+                .scroll-down:hover {
+                    transform: translateX(-50%) translateY(10px);
+                }
+        
+                /* 问题3：冗余的箭头旋转定义 */
+                .scroll-down::before {
+                    content: '';
+                    position: static;
+                    transform: rotate(45deg);
+                    margin-top: -3px;
+                    width: 18px;
+                    height: 18px;
+                    border-right: 2px solid white;
+                    border-bottom: 2px solid white;
+                }
+        
+        /* 新增文字样式 */
+        .scroll-down::after {
+            content: 'Explore Stanford';
             color: white;
-            text-decoration: none;
+            background: rgb(177, 4,14);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 1.2em;
+            white-space: nowrap;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* 调整悬停效果 */
+        .scroll-down:hover {
+            transform: translateX(-50%) translateY(10px);
+        }
+        /* 调整箭头旋转方向 */
+        .scroll-down::before {
+            transform: rotate(225deg);
+            margin-top: 0;
+        }
+        
+        /* 调整箭头位置 */
+        .scroll-down::before {
+            content: '';
+            position: static; /* 取消绝对定位 */
+            transform: rotate(45deg);
+            margin-top: -4px;
+            width: 24px;
+            height: 24px;
+            border-right: 3px solid white;
+            border-bottom: 3px solid white;
+        }
+        
+        /* 调整悬停效果 */
+        .scroll-down:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        /* 调整伪元素顺序 */
+        .scroll-down::before {
+            order: 2;  
+            /* 保持其他箭头样式不变 */
+        }
+        
+        .scroll-down::after {
+            order: 1;
+            /* 保持其他文字样式不变 */
+        }
+    .scroll-down::before {
+        width: 18px;    /* 调整箭头宽度 */
+        height: 18px;   /* 调整箭头高度 */
+        border-right: 2px solid white;   /* 调整箭头颜色 */
+         border-bottom: 2px solid white;  /* 调整箭头颜色 */
+        margin-top: -3px;  /* 调整箭头位置 */
+    }
+
+        .scroll-down::after {
+            font-size: 1.4em;
+        }
+        .stf-nav {    
+            /* 新增右对齐布局 */
+            display: flex;
+            justify-content: flex-end;
+            margin-left: auto; /* 将导航推至右侧 */
+        }
+
+        /* 移动提示文字到链接容器内部 */
+        .stf-nav span {
+            margin-right: 10px;
+        }
+
+        .stf-nav a {
             margin: 0 10px;
-            font-size: 14px;
+            text-decoration: none; /* 修正属性名称并移除多余分号 */
         }
-        /* 新增主导航菜单样式 */
-        /* 设置主导航菜单的背景颜色、底部边框和内边距、弹性布局 */
-        .main-nav {
-            background-color: white;
-            border-bottom: 1px solid #ddd;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        /* 设置主导航菜单链接的文字颜色、去除下划线、左右外边距、字体粗细和字体大小 */
-        .main-nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        /* 新增搜索框样式 */
-        /* 设置搜索框的边框、内边距和圆角 */
-        .search-box {
-            border: 1px solid #ddd;
-            padding: 5px;
-            border-radius: 4px;
-        }
-        /* 响应式设计 */
-        /* 当屏幕宽度小于等于 768px 时，调整顶部导航栏和主导航菜单的布局 */
-        @media (max-width: 768px) {
-            .top-nav, .main-nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .top-nav a, .main-nav a {
-                margin: 5px 0;
-            }
-        }
-        /* 新增样式，让 Stanford University 和 Information for: 相隔 3cm */
-        .top-nav > div:first-child a {
-            margin-right: 3cm;
-        }
+
+/* 修改 header 背景颜色 */
+header {
+    /* 修改背景颜色为其他颜色，这里以白色为例 */
+    background-color: white; 
+    color: black;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 修改 nav 背景颜色 */
+nav {
+    /* 修改背景颜色为其他颜色，这里以灰色为例 */
+    background-color: #f0f0f0; 
+    padding: 15px 0;
+}
+
+/* 修改顶部导航栏背景颜色 */
+.top-nav {
+    /* 修改背景颜色为其他颜色，这里以白色为例 */
+    background-color: white; 
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 修改顶部导航栏链接颜色 */
+.top-nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    position: relative;
+    padding-top: 4px;
+}
